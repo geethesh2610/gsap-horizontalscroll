@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="./css/output.css" />
 	</head>
 	<body class="text-[8cqw] md:text-[4cqw] font-bold overflow-y-visible overflow-x-hidden relative">
-		<img src="./assets/glant-ostracod.png" alt="Image" class="fixed top-[10vh] left-[5vw] w-[12%] z-[99] aspect-square" />
 		<section class="w-screen h-screen flex items-center justify-center border-[.25cqw] border-black bg-violet-500">Section 1</section>
 		<section class="w-screen h-screen flex items-center justify-center border-[.25cqw] border-black bg-indigo-500">Section 2</section>
 		<section class="scroll-container w-[300%] h-screen flex flex-wrap">
@@ -55,29 +54,6 @@
 				},
 				xPercent: -100 * (sections.length - 1),
 				ease: "none",
-			});
-
-			let image = document.querySelector("img");
-			const viewportWidth = window.innerWidth;
-			const viewportHeight = window.innerHeight;
-			const imageWidth = image.clientWidth;
-			const imageHeight = image.clientHeight;
-
-			function randomInRange(min, max) {
-				return Math.random() * (max - min) + min;
-			}
-
-			gsap.to(image, {
-				scrollTrigger: {
-					trigger: "body",
-					start: "top top",
-					scrub: true,
-					markers: true,
-				},
-				x: () => randomInRange(-viewportWidth / 2 + imageWidth / 2, viewportWidth / 2 - imageWidth / 2),
-				y: () => randomInRange(-viewportHeight / 2 + imageHeight / 2, viewportHeight / 2 - imageHeight / 2),
-				rotation: () => randomInRange(-30, 30), // Adjust the rotation range as needed
-				duration: 4, // Adjust the duration as needed
 			});
 		</script>
 	</body>
