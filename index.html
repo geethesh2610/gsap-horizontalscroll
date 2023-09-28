@@ -8,8 +8,15 @@
 
 		<!-- CSS link -->
 		<link rel="stylesheet" href="./css/output.css" />
+
+		<style>
+			html{
+				width: 100vw;
+				overflow-x: hidden;
+			}
+		</style>
 	</head>
-	<body class="text-[8cqw] md:text-[4cqw] font-bold overflow-y-visible overflow-x-hidden relative">
+	<body class="text-[8cqw] md:text-[4cqw] w-screen font-bold overflow-x-hidden relative">
 		<section class="w-screen h-screen flex items-center justify-center border-[.25cqw] border-black bg-violet-500">Section 1</section>
 		<section class="w-screen h-screen flex items-center justify-center border-[.25cqw] border-black bg-indigo-500">Section 2</section>
 		<section class="scroll-container w-[300%] h-screen flex flex-wrap">
@@ -31,6 +38,7 @@
 				scrollTrigger: {
 					trigger: ".scroll-container",
 					start: "top top",
+					end: () => "+=" + document.querySelector(".scroll-container").offsetWidth,
 					scrub: true,
 					pin: true,
 				},
